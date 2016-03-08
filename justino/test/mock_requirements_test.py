@@ -97,4 +97,4 @@ class TestMockRequirements(TestCase):
         self.assertEqual(result, '__file__')
 
     # Coverage functions
-
+    
