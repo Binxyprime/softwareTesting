@@ -1,0 +1,1 @@
+tests.plugins.coverage => test.plugins.coverage

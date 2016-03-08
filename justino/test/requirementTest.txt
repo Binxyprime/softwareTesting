@@ -1,0 +1,34 @@
+#0001 The system shall be able to determine if a triangle is scalene, equilateral or isosceles
+#0002 The system shall accept three triangle sides as length in either float or integers
+#0003 The system shall be able to determine the type of quadrilateral based on 4 sides and 4 angles
+#0004 The system shall accept quadrilateral sides as floats or integers
+#0005 The system shall accept quadrilateral angles as floats or integers
+
+#0006 The system shall accept questions in the form of strings and attempt to answer them
+#0007 The system shall answer questions that begin with one of the following valid question keywords: "How", "What", "Where", "Why" and "Who"
+#0008 If the system does not detect a valid question keyword it shall return "Was that a question?"
+#0009 If the system does not detect a question mark at end of the string it shall return "Was that a question?"
+#0010 The system shall break a question down into words separated by space
+
+#0011 The system shall determine an answer to a question as a correct if the keywords provide a 90% match and return the answer
+#0012 The system shall exclude any number value from match code and provide the values to generator function (if one exists)
+#0013 When a valid match is determined the system shall return the answer
+#0014 When no valid match is determined the system shall return "I don't know, please provide the answer"
+#0015 The system shall provide a means of providing an answer to the previously asked question.
+
+#0016 The system shall accept and store answers to previous questions in the form of a string or a function pointer and store it as the generator function.
+#0017 If no previous question has been asked the system shall respond with "Please ask a question first"
+#0018 If an attempt is made to provide an answer to an already answered question the system shall respond with "I don\'t know about that. I was taught differently" and not update the question
+#0019 The system shall provide a means of updating an answer to the previously asked question.
+#0020 The system shall accept and store answers to previous questions in the form of a string or a function pointer and store it as the generator function.
+
+#0021 If no previous question has been asked the system shall respond with "Please ask a question first"
+
+
+* When I ask "What time is it?" I want to be given the current date/time so I can stay up to date
+* When I ask "What is the n digit of fibonacci" I want to receive the answer so I don't have to figure it out myself
+* When I ask "What is the n digit of pi" I want to receive the answer so I don't have to figure it out myself
+* When I ask "Please clear memory" I was the application to clear user set questions and answers so I can reset the application
+* When I say "Open the door hal", I want the application to say "I'm afraid I can't do that <user name> so I know that is not an option
+* When I ask "Convert <number> <units> to <units>" I want to receive the converted value and units so I can know the answer.
+* When I ask for a numeric conversion I want at least 10 different units I can convert from/to
