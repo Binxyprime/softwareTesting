@@ -50,7 +50,7 @@ def get_git_file_info(path):
         return '{} has been modified locally'.format(os.path.basename(path))
     elif path in get_untracked_files(test_repo):
         git_logger.warning('%s is not checked in', path)
-        return '{} has been not been checked in'.format(os.path.basename(path))
+        return '{} has not been checked in'.format(os.path.basename(path))
     elif is_repo_dirty(test_repo, include_untracked=True):
         git_logger.warning('%s is contained in a dirty repo', path)
         return '{} is a dirty repo'.format(os.path.basename(path))
@@ -261,4 +261,3 @@ def git_execute(params=None, path=os.getcwd()):
         git_logger.error('Error occurred when executing git command(%s): %s', params,
                          stderr.strip())
     return stdout.strip()
-

@@ -19,11 +19,14 @@
 #0019 test_provide_answer_corrected, test_provide_answer_corrected_square, 
 #0020 test_provide_answer_corrected_sentence, test_provide_answer_corrected_square2, 
 #0021 test_no_prev_question_corrected, 
-#0100 test_is_file_path_in_repo, 
-#0101 
-#0102 
-#0103 
-#0104 
+#0050 test_file_dirty, test_file_in_repo, test_file_info, test_file_modified, test_file_not_in_repo, test_file_untracked, test_repo_branch, test_repo_url, 
+#0051 test_file_dirty, test_file_in_repo, test_file_info, test_file_modified, test_file_not_in_repo, test_file_untracked, test_repo_branch, test_repo_url, 
+#0052 test_file_dirty, test_file_in_repo, test_file_info, test_file_modified, test_file_not_in_repo, test_file_untracked, test_repo_branch, test_repo_url, 
+#0100 test_file_in_repo, test_file_not_in_repo, 
+#0101 test_file_dirty, test_file_modified, test_file_untracked, 
+#0102 test_file_info, 
+#0103 test_repo_branch, 
+#0104 test_repo_url, 
 when i ask "what time is it?" i want to be given the current date/time so i can stay up to date test_story_ask_datetime, 
 when i ask "what is the n digit of fibonacci" i want to receive the answer so i don't have to figure it out myself test_story_ask_fib, 
 when i ask "what is the n digit of pi" i want to receive the answer so i don't have to figure it out myself test_story_ask_npi, test_story_ask_npi_one, test_story_ask_npi_zero, 

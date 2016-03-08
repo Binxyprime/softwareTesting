@@ -1,11 +1,8 @@
-from source.main import Interface
+from main import Interface
 from unittest import TestCase
-from test.plugins.ReqTracer import story
 from datetime import datetime
-import getpass
+from plugins.ReqTracer import story
 from storyFunctions import *
-from storyFunctions import npi
-from shape_checker import get_triangle_type, get_quad_type
 
 
 class TestGetStoryCases(TestCase):
@@ -21,8 +18,8 @@ class TestGetStoryCases(TestCase):
     @story('When I ask "What is the n digit of fibonacci" I want to receive the answer so I don\'t have to figure it out myself')
     def test_story_ask_fib(self):
         obj = Interface()
-        result = obj.ask("What is the 5 digit of fibonacci?")
-        self.assertEqual(result, 5)
+        result = obj.ask("What is the 20 digit of fibonacci?")
+        self.assertEqual(result, 6765)
 
     # Pi up to 100 places
     @story('When I ask "What is the n digit of pi" I want to receive the answer so I don\'t have to figure it out myself')

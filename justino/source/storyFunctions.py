@@ -1,11 +1,12 @@
-from datetime import datetime
-from math import pi, sqrt, factorial
-from decimal import getcontext, Decimal
-import numbers
+from math import sqrt, factorial
 import getpass
 from time import sleep
-
+from datetime import datetime
 # List of Functions for use in story checker.as
+
+
+def date_time():
+    return datetime.now().strftime('%m: %d: %y: %H:%M:%S')
 
 
 # ********************
@@ -27,10 +28,8 @@ def npi(n):
     if n == 0:
         return 'Invalid index for pi'
     else:
-        myPi = "31415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679"
-        return int(myPi[int(n-1)])
-
-
+        my_pi = "31415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679"
+        return int(my_pi[int(n-1)])
 
 
 # ********************
@@ -156,6 +155,7 @@ def abs_value(n):
     else:
         return n
 
+
 # ********************
 #   hypotenuse
 # ********************
@@ -163,6 +163,7 @@ def hypotenuse(x, y):
     z = x**2 + y**2
     c = sqrt(z)
     return c
+
 
 # ********************
 #   WannaHear a joke
@@ -183,6 +184,7 @@ def numE(n):
     else:
         myE = "271828182845904523536028747135266249775724709369995"
         return int(myE[int(n-1)])
+
 
 # ********************
 #      pokemon

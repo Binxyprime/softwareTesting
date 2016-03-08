@@ -1,6 +1,6 @@
-from source.main import Interface
+from main import Interface
 from unittest import TestCase
-from test.plugins.ReqTracer import requirements, story
+from plugins.ReqTracer import requirements, story
 from shape_checker import get_triangle_type, get_quad_type
 
 import sys
