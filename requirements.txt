@@ -7,6 +7,3 @@ mock
 sphinx
 docutils
 nose2-cov==1.0a4
-
-pip install --upgrade pip
-pip install --force-reinstall mock
