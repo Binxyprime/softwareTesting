@@ -1,11 +1,10 @@
-from datetime import datetime
 from question_answer import QA
 from shape_checker import get_triangle_type, get_quad_type
-from storyFunctions import *
-from git_utils import *
+from storyFunctions import date_time, fibonacci, npi, rebuke_user, metric_display, metricConversion, fav_num, \
+    colorPrint,  colorWheel, nFactorial, square_root, abs_value, hypotenuse, joke, numE, pokemon
+from git_utils import is_file_in_repo, get_file_info, get_git_file_info, get_repo_branch, get_repo_url
 import time
 import difflib
-
 
 NOT_A_QUESTION_RETURN = "Was that a question?"
 UNKNOWN_QUESTION = "I don't know, please provide the answer"
@@ -43,7 +42,8 @@ class Interface(object):
             "Tell me a joke": QA("Tell me a joke", joke),
             'What is the square root of ': QA('What is the square root of', square_root),
             'What is the absolute value of ': QA('What is the absolute value of ', abs_value),
-            'What is the hypotenuse of a right triangles who\'s side lengths are n and n': QA('What is the hypotenuse of a right triangles who\'s side lengths are and ', hypotenuse),
+            'What is the hypotenuse of a right triangles who\'s side lengths are n and n': QA(
+                'What is the hypotenuse of a right triangles who\'s side lengths are and ', hypotenuse),
             'Who\'s that Pokemon ': QA('Who\'s that Pokemon ', pokemon),
 
             # Lab 5 additions
@@ -90,8 +90,8 @@ class Interface(object):
                     args.append(keyword[1:-1])
                 else:
                     args.append(float(keyword))
-            except Exception as ex: #<---ADDED
-                print ex #<---ADDED
+            except Exception as ex:  # <---ADDED
+                print ex  # <---ADDED
                 parsed_question += "{0} ".format(keyword)
         parsed_question = parsed_question[0:-1]
         self.last_question = parsed_question

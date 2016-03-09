@@ -2,6 +2,8 @@ from math import sqrt, factorial
 import getpass
 from time import sleep
 from datetime import datetime
+
+
 # List of Functions for use in story checker.as
 
 
@@ -18,7 +20,7 @@ def fibonacci(n):
     elif n == 1:
         return 1
     else:
-        return fibonacci(n-1) + fibonacci(n-2)
+        return fibonacci(n - 1) + fibonacci(n - 2)
 
 
 # ********************
@@ -29,7 +31,7 @@ def npi(n):
         return 'Invalid index for pi'
     else:
         my_pi = "31415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679"
-        return int(my_pi[int(n-1)])
+        return int(my_pi[int(n - 1)])
 
 
 # ********************
@@ -56,7 +58,6 @@ def metric_display():
 #      metric
 # ********************
 def metricConversion(value, unit, convert_unit):
-
     metric = {
         'tera': 6,
         'giga': 5,
@@ -85,7 +86,7 @@ def metricConversion(value, unit, convert_unit):
             param2 = metric[key]
 
     step = param - param2
-    value *= 10**step
+    value *= 10 ** step
 
     return str(value) + ' ' + str(convert_unit)
 
@@ -107,8 +108,7 @@ def colorPrint():
 # ********************
 #   colorWheel
 # ********************
-def colorWheel( colorA, colorB ):
-
+def colorWheel(colorA, colorB):
     if colorA == 'blue':
         if colorB == 'red':
             return 'violet'
@@ -151,7 +151,7 @@ def square_root(n):
 # ********************
 def abs_value(n):
     if n < 0:
-        return n*(-1)
+        return n * (-1)
     else:
         return n
 
@@ -160,7 +160,7 @@ def abs_value(n):
 #   hypotenuse
 # ********************
 def hypotenuse(x, y):
-    z = x**2 + y**2
+    z = x ** 2 + y ** 2
     c = sqrt(z)
     return c
 
@@ -169,7 +169,6 @@ def hypotenuse(x, y):
 #   WannaHear a joke
 # ********************
 def joke():
-
     print "Wanna hear a joke?...\n "
     sleep(1)
     return "To whoever took my Microsoft Office: I will find you. You have my Word."
@@ -183,7 +182,7 @@ def numE(n):
         return 'Invalid index for e'
     else:
         myE = "271828182845904523536028747135266249775724709369995"
-        return int(myE[int(n-1)])
+        return int(myE[int(n - 1)])
 
 
 # ********************

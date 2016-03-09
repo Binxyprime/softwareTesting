@@ -13,6 +13,7 @@ def check_valid_path(func):
             raise Exception('Path {0} does not exist cannot get git file '
                             'info'.format(path))
         return func(path, *args, **kwargs)
+
     return path_checker
 
 
@@ -24,8 +25,8 @@ def is_file_in_repo(path):
     if not os.path.isabs(path):
         path = os.path.abspath(path)
     test_repo = os.path.dirname(path)
-    if(path in get_diff_files(test_repo) or
-       path in get_untracked_files(test_repo)):
+    if (path in get_diff_files(test_repo) or
+                path in get_untracked_files(test_repo)):
         git_logger.debug('%s changed or is untracked in repo %s', path, test_repo)
         return 'No'
     return 'Yes'
@@ -56,7 +57,6 @@ def get_git_file_info(path):
         return '{} is a dirty repo'.format(os.path.basename(path))
 
     return '{} is up to date'.format(os.path.basename(path))
-
 
 
 @check_valid_path

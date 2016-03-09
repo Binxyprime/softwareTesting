@@ -1,16 +1,14 @@
-from main import Interface
+from source.main import Interface
 from unittest import TestCase
-from plugins.ReqTracer import requirements, story
-from shape_checker import get_triangle_type, get_quad_type
-
-import sys
+from plugins.ReqTracer import requirements
+from source.shape_checker import get_triangle_type, get_quad_type
 
 
 class TestGetShapes(TestCase):
-
     # test requirements for asking a question beginning with 'How', 'What', 'Where', 'Why', and 'Who'
     # testing requirement #0006, #0007
-    #0007 The system shall answer questions that begin with one of the following valid question keywords: "How", "What", "Where", "Why" and "Who"
+    # 0007 The system shall answer questions that begin with one of the following valid question keywords:
+    # "How", "What", "Where", "Why" and "Who"
 
     # what
     @requirements(['#0001', '#0002', '#0006', '#0007', '#0010', '#0013'])
@@ -47,7 +45,7 @@ class TestGetShapes(TestCase):
         result = obj.ask('Why did Abe Lincoln start killing vampires?')
         self.assertEqual(result, 'I don\'t know, please provide the answer')
 
-    #0008 If the system does not detect a valid question keyword it shall return "Was that a question?"
+    # 0008 If the system does not detect a valid question keyword it shall return "Was that a question?"
 
     # when
     @requirements(['#0006', '#0007', '#0008', '#0010'])
@@ -56,14 +54,14 @@ class TestGetShapes(TestCase):
         result = obj.ask('When did Abe Lincoln become president?')
         self.assertEqual(result, 'Was that a question?')
 
-    #0009 If the system does not detect a question mark at end of the string it shall return "Was that a question?"
+    # 0009 If the system does not detect a question mark at end of the string it shall return "Was that a question?"
     @requirements(['#0006', '#0007', '#0009', '#0010'])
     def test_ask_no_question_mark(self):
         obj = Interface()
         result = obj.ask('Whats up')
         self.assertEqual(result, 'Was that a question?')
 
-    #0010 The system shall break a question down into words separated by spaces
+    # 0010 The system shall break a question down into words separated by spaces
     @requirements(['#0006', '#0007', '#0008', '#0009', '#0010', '#0014'])
     def test_ask_no_spaces(self):
         obj = Interface()
@@ -76,35 +74,37 @@ class TestGetShapes(TestCase):
         result = obj.ask('How What When Where Why Who?')
         self.assertEqual(result, 'I don\'t know, please provide the answer')
 
-    #0011 The system shall determine an answer to a question as a correct if the keywords provide a 90% match and return the answer
+    # 0011 The system shall determine an answer to a question as a correct if the keywords provide a 90%
+    # match and return the answer
     @requirements(['#0001', '#0002', '#0006', '#0007', '#0010', '#0011', '#0013'])
     def test_ask_triangle_equilateral_percentage(self):
         obj = Interface()
         result = obj.ask('What type triangle is 1.0 1 1?')
         self.assertEqual(result, 'equilateral')
 
-    #0012 The system shall exclude any number value from match code and provide the values to generator function (if one exists)
+    # 0012 The system shall exclude any number value from match code and provide the values
+    # to generator function (if one exists)
     @requirements(['#0001', '#0002', '#0006', '#0007', '#0010', '#0011', '#0012', '#0013'])
     def test_ask_triangle_equilateral_number_match(self):
         obj = Interface()
         result = obj.ask('What type of 1 1 1.0 triangle is?')
         self.assertEqual(result, 'equilateral')
 
-    #0013 When a valid match is determined the system shall return the answer
+    # 0013 When a valid match is determined the system shall return the answer
     @requirements(['#0001', '#0002', '#0006', '#0007', '#0010', '#0013'])
     def test_ask_triangle_equilateral_match(self):
         obj = Interface()
         result = obj.ask('What type of triangle is 1 1.0 1?')
         self.assertEqual(result, 'equilateral')
 
-    #0014 When no valid match is determined the system shall return "I don't know, please provide the answer"
+    # 0014 When no valid match is determined the system shall return "I don't know, please provide the answer"
     @requirements(['#0006', '#0007', '#0010', '#0014'])
     def test_ask_dont_know(self):
         obj = Interface()
         result = obj.ask('Why did Abe Lincoln start killing vampires?')
         self.assertEqual(result, 'I don\'t know, please provide the answer')
 
-    #0015 The system shall provide a means of providing an answer to the previously asked question.
+    # 0015 The system shall provide a means of providing an answer to the previously asked question.
     @requirements(['#0006', '#0007', '#0010', '#0015', '#0016'])
     def test_provide_answer(self):
         obj = Interface()
@@ -113,7 +113,8 @@ class TestGetShapes(TestCase):
         result = obj.ask('Why did Abe Lincoln start killing vampires?')
         self.assertEqual(result, 'Because Abe hates glitter')
 
-    #0016 The system shall accept and store answers to previous questions in the form of a string or a function pointer and store it as the generator function.
+    # 0016 The system shall accept and store answers to previous questions in the form of a string or a
+    # function pointer and store it as the generator function.
     @requirements(['#0001', '#0002', '#0006', '#0007', '#0010', '#0013', '#0015', '#0016'])
     def test_ask_tri(self):
         obj = Interface()
@@ -122,14 +123,15 @@ class TestGetShapes(TestCase):
         result = obj.ask('What type of tri is 1.0 1 1?')
         self.assertEqual(result, 'equilateral')
 
-    #0017 If no previous question has been asked the system shall respond with "Please ask a question first"
+    # 0017 If no previous question has been asked the system shall respond with "Please ask a question first"
     @requirements(['#0001', '#0002', '#0006', '#0007', '#0010', '#0013', '#0016', '#0017'])
     def test_no_prev_question(self):
         obj = Interface()
         result = obj.teach('answer')
         self.assertEqual(result, 'Please ask a question first')
 
-    #0018 If an attempt is made to provide an answer to an already answered question the system shall respond with "I don\'t know about that. I was taught differently" and not update the question
+    # 0018 If an attempt is made to provide an answer to an already answered question the system shall respond
+    # with "I don\'t know about that. I was taught differently" and not update the question
     @requirements(['#0006', '#0007', '#0010', '#0016', '#0018'])
     def test_provide_answer_already_asked(self):
         obj = Interface()
@@ -146,7 +148,7 @@ class TestGetShapes(TestCase):
         result = obj.teach('Because Abe hates glitter')
         self.assertEqual(result, "I don\'t know about that. I was taught differently")
 
-    #0019 The system shall provide a means of updating an answer to the previously asked question.
+    # 0019 The system shall provide a means of updating an answer to the previously asked question.
     @requirements(['#0006', '#0007', '#0010', '#0015', '#0016', '#0019'])
     def test_provide_answer_corrected(self):
         obj = Interface()
@@ -166,7 +168,8 @@ class TestGetShapes(TestCase):
         result = obj.ask(obj.last_question + '?')
         self.assertEqual(result, 'invalid')
 
-    #0020 The system shall accept and store answers to previous questions in the form of a string or a function pointer and store it as the generator function.
+    # 0020 The system shall accept and store answers to previous questions in the form of a string or a function
+    # pointer and store it as the generator function.
     @requirements(['#0006', '#0007', '#0010', '#0015', '#0016', '#0020'])
     def test_provide_answer_corrected_sentence(self):
         obj = Interface()
@@ -185,7 +188,7 @@ class TestGetShapes(TestCase):
         result = obj.ask('What type of flamingo is this 1 1 1 1?')
         self.assertEqual(result, 'Square')
 
-    #0021 If no previous question has been asked the system shall respond with "Please ask a question first"
+    # 0021 If no previous question has been asked the system shall respond with "Please ask a question first"
     @requirements(['#0006', '#0007', '#0010', '#0013', '#0016', '#0017', '#0021'])
     def test_no_prev_question_corrected(self):
         obj = Interface()
@@ -197,4 +200,3 @@ class TestGetShapes(TestCase):
         obj = Interface()
         with self.assertRaises(Exception, msg='Not A String!'):
             obj.ask(1)
-

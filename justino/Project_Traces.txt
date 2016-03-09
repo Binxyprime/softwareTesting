@@ -43,4 +43,4 @@ when i say "tell me a joke" i want to be told an incredibly poor joke test_story
 when i ask "what is the square root of n" i want to be told it instead of getting a calculator. test_story_square_root, 
 if i tell the system to "give me absolute value of <number>" i want it to tell me test_story_absolute_value, test_story_absolute_value_neg, 
 if i ask "what is the hypotenuse of a right triangles who's side lengths are <length> and <length>" i want an answer test_story_hypotenuse, 
-who's that pokemon!? test_story_whos_that_pokemon, 
+who's that pokemon!? test_story_who_is_that_pokemon, 

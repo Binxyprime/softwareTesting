@@ -112,9 +112,11 @@ def get_quad_type(a=0, b=0, c=0, d=0, e=90, f=90, g=90, h=90):
         h = values[7]
 
     # inputs must be integers or floating point numbers.
-    if not (isinstance(a, (int, float)) and isinstance(b, (int, float)) and isinstance(c, (int, float)) and isinstance(d, (int, float))):
+    if not (isinstance(a, (int, float)) and isinstance(b, (int, float)) and isinstance(c, (int, float)) and isinstance(
+            d, (int, float))):
         return "invalid"
-    if not (isinstance(e, (int, float)) and isinstance(f, (int, float)) and isinstance(g, (int, float)) and isinstance(h, (int, float))):
+    if not (isinstance(e, (int, float)) and isinstance(f, (int, float)) and isinstance(g, (int, float)) and isinstance(
+            h, (int, float))):
         return "invalid"
 
     # cannot have negative length, if length = 0 on any input then it will be a line not a quadrilateral or a triangle

@@ -1,7 +1,7 @@
-from main import Interface
+from source.main import Interface
 from unittest import TestCase
 from plugins.ReqTracer import requirements
-from git_utils import *
+from source.git_utils import *
 from os import path
 from mock import patch, Mock
 
@@ -96,5 +96,4 @@ class TestMockRequirements(TestCase):
         result = obj.ask('Where did <{}> come from?'.format(__file__))
         self.assertEqual(result, '__file__')
 
-    # Coverage functions
-    
+        # Coverage functions
