@@ -96,4 +96,14 @@ class TestMockRequirements(TestCase):
         result = obj.ask('Where did <{}> come from?'.format(__file__))
         self.assertEqual(result, '__file__')
 
-        # Coverage functions
+    # Coverage functions
+    @requirements(['#0101'])
+    def test_path_checker(self):
+        self.assertRaisesRegexp(Exception, 'Path blah does not exist cannot get git file', get_git_file_info, 'blah')
+
+    @requirements(['#0101'])
+    def test_is_file_in_repo_cov(self):
+        self.assertRaisesRegexp(Exception, '%s changed or is untracked in repo %s', is_file_in_repo, 'requirements.txt')
+
+
+

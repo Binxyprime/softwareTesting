@@ -2,7 +2,7 @@ from source.main import Interface
 from unittest import TestCase
 from datetime import datetime
 import getpass
-from plugins.ReqTracer import story
+from plugins.ReqTracer import story, requirements
 from storyFunctions import date_time, fibonacci, npi, rebuke_user, metric_display, metricConversion, fav_num, \
     colorPrint,  colorWheel, nFactorial, square_root, abs_value, hypotenuse, joke, numE, pokemon
 
@@ -19,6 +19,7 @@ class TestGetStoryCases(TestCase):
     @story(
             'When I ask "What is the n digit of fibonacci" I want to receive the answer so I don\'t have to figure'
             ' it out myself')
+    @requirements(['#0053'])
     def test_story_ask_fib(self):
         obj = Interface()
         result = obj.ask("What is the 20 digit of fibonacci?")
@@ -28,6 +29,7 @@ class TestGetStoryCases(TestCase):
     @story(
             'When I ask "What is the n digit of pi" I want to receive the answer so I don\'t have '
             'to figure it out myself')
+    @requirements(['#0054'])
     def test_story_ask_npi(self):
         obj = Interface()
         result = obj.ask("What is the 11 digit of pi?")
@@ -36,6 +38,7 @@ class TestGetStoryCases(TestCase):
     @story(
             'When I ask "What is the n digit of pi" I want to receive the answer so I don\'t have to'
             ' figure it out myself')
+    @requirements(['#0054'])
     def test_story_ask_npi_one(self):
         obj = Interface()
         result = obj.ask("What is the 1 digit of pi?")
@@ -109,6 +112,7 @@ class TestGetStoryCases(TestCase):
     @story(
             'When I ask "Convert <number> <units> to <units>" I want to receive the converted value'
             ' and units so I can know the answer.')
+    @requirements(['#0055'])
     def test_story_convert_number_to_unit(self):
         obj = Interface()
         result = obj.ask("Convert 10 deci to deca?")
@@ -117,6 +121,7 @@ class TestGetStoryCases(TestCase):
     @story(
             'When I ask "Convert <number> <units> to <units>" I want to receive '
             'the converted value and units so I can know the answer.')
+    @requirements(['#0055'])
     def test_story_convert_number_to_unit_period_punctuation(self):
         obj = Interface()
         result = obj.ask("Convert 10 deci to deca.")
@@ -162,6 +167,7 @@ class TestGetStoryCases(TestCase):
     @story(
             'When I ask "What color does <color> and <color> make?" I want the system'
             ' to tell me so I don\'t have to get my hands dirty.')
+    @requirements(['#0056'])
     def test_story_color_paint1(self):
         obj = Interface()
         result = obj.ask("What color does blue and yellow make?")
@@ -170,6 +176,7 @@ class TestGetStoryCases(TestCase):
     @story(
             'When I ask "What color does <color> and <color> make?" I want the system '
             'to tell me so I don\'t have to get my hands dirty.')
+    @requirements(['#0056'])
     def test_story_color_paint2(self):
         obj = Interface()
         result = obj.ask("What color does blue and blue make?")
@@ -178,6 +185,7 @@ class TestGetStoryCases(TestCase):
     @story(
             'When I ask "What color does <color> and <color> make?" I want the'
             ' system to tell me so I don\'t have to get my hands dirty.')
+    @requirements(['#0056'])
     def test_story_color_paint3(self):
         obj = Interface()
         result = obj.ask("What color does blue and red make?")
@@ -186,6 +194,7 @@ class TestGetStoryCases(TestCase):
     @story(
             'When I ask "What color does <color> and <color> make?" I want the'
             ' system to tell me so I don\'t have to get my hands dirty.')
+    @requirements(['#0056'])
     def test_story_color_paint4(self):
         obj = Interface()
         result = obj.ask("What color does yellow and yellow make?")
@@ -194,6 +203,7 @@ class TestGetStoryCases(TestCase):
     @story(
             'When I ask "What color does <color> and <color> make?" I want '
             'the system to tell me so I don\'t have to get my hands dirty.')
+    @requirements(['#0056'])
     def test_story_color_paint5(self):
         obj = Interface()
         result = obj.ask("What color does yellow and red make?")
@@ -202,6 +212,7 @@ class TestGetStoryCases(TestCase):
     @story(
             'When I ask "What color does <color> and <color> make?" I want the system to'
             ' tell me so I don\'t have to get my hands dirty.')
+    @requirements(['#0056'])
     def test_story_color_paint6(self):
         obj = Interface()
         result = obj.ask("What color does yellow and blue make?")
@@ -210,6 +221,7 @@ class TestGetStoryCases(TestCase):
     @story(
             'When I ask "What color does <color> and <color> make?" I want the system to tell me '
             'so I don\'t have to get my hands dirty.')
+    @requirements(['#0056'])
     def test_story_color_paint7(self):
         obj = Interface()
         result = obj.ask("What color does red and yellow make?")
@@ -218,6 +230,7 @@ class TestGetStoryCases(TestCase):
     @story(
             'When I ask "What color does <color> and <color> make?" I want the system to tell me so '
             'I don\'t have to get my hands dirty.')
+    @requirements(['#0056'])
     def test_story_color_paint8(self):
         obj = Interface()
         result = obj.ask("What color does red and red make?")
@@ -226,6 +239,7 @@ class TestGetStoryCases(TestCase):
     @story(
             'When I ask "What color does <color> and <color> make?" I want the system to tell me so '
             'I don\'t have to get my hands dirty.')
+    @requirements(['#0056'])
     def test_story_color_paint9(self):
         obj = Interface()
         result = obj.ask("What color does red and blue make?")
@@ -267,6 +281,7 @@ class TestGetStoryCases(TestCase):
     @story(
             'If I ask "What is the hypotenuse of a right triangles who\'s side lengths '
             'are <length> and <length>" I want an answer')
+    @requirements(['#0057'])
     def test_story_hypotenuse(self):
         obj = Interface()
         result = obj.ask('What is the hypotenuse of a right triangles who\'s side lengths are 3 and 3?')

@@ -27,6 +27,11 @@
 #0050 When asked a question the system shall output the question to a log file
 #0051 When asked a question the system shall output the answer to a log file
 #0052 The system shall output questions and answers to the log file in under 50 ms
+#0053 Fibonacci will return up to the 20th digit within 40 ms
+#0054 Shall return up to the 100th digit of Pi within 20 ms
+#0055 Convert Metric will return conversion within 1 ms
+#0056 Mix colors will return the color mixture within 1 ms
+#0057 Will return hypotenuse within 70 ms
 
 #0100 The system shall return 'Yes' or 'No' when asked 'Is the <file path> in the repo?'
 #0101 The system shall return one of the following when asked 'What is the status of <file path>?'

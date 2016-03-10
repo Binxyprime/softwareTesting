@@ -69,7 +69,7 @@ class Interface(object):
         end = time.clock()
         clocktime = end - start
         if len(question) > 0:
-            f = open('question.txt', 'a')
+            f = open('log.txt', 'a')
             f.write('QUESTION => ' + question + '\t\t' + str(clocktime) + '\n')
             f.close()
 
@@ -101,14 +101,14 @@ class Interface(object):
                 if answer.function is None:
                     end = time.clock()
                     clocktime = end - start
-                    f = open('answer.txt', 'a')
+                    f = open('log.txt', 'a')
                     f.write('ANSWER => ' + answer.value + '\t\t' + str(clocktime) + '\n')
                     f.close()
                     return answer.value
                 else:
                     end = time.clock()
                     clocktime = end - start
-                    f = open('answer.txt', 'a')
+                    f = open('log.txt', 'a')
                     f.write('ANSWER => ' + str(answer.function(*args)) + '\t\t' + str(clocktime) + '\n')
                     f.close()
                     return answer.function(*args)
